@@ -19,7 +19,6 @@ import io
 app = Flask(__name__)
 
 client = MongoClient()
-# print(client.list_database_names())
 portfolio_sims_db = client["portfolio_sims"]
 sims_col = portfolio_sims_db["sims"]
 
@@ -27,15 +26,7 @@ folder_path = "..\\portfolio_main\\static\\imgs"
 
 def make_graph(mean_list, error_list, username, portfolio_name, fig_name):
 
-    if fig_name == "cash-nominal":
-        print("nominal")
-        print(mean_list)
-        print(error_list)
-
-    if fig_name == "cash-real":
-        print("real")
-        print(mean_list)
-        print(error_list)
+          
     
     n_groups = len(mean_list)
 
@@ -222,9 +213,6 @@ def analysis():
       
 
     return jsonify({"results": results})
-
-
-
 
 
 
